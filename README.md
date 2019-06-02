@@ -17,6 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Example Layouting
 
-<p align="center">
-  ![Alt text](images/screen.JPG?raw=true "Title")
-</p>
+![Alt text](images/screen.JPG?raw=true "Title")
