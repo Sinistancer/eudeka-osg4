@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+// import 'package:english_words/english_words.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,8 +28,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {  
   // final wordPair = WordPair.random();
-  final _suggestions = <WordPair>[];
-  final _biggerFont = const TextStyle(fontSize: 18.0);
+  // final _suggestions = <WordPair>[];
+  // final _biggerFont = const TextStyle(fontSize: 18.0);
 
   @override
   Widget build(BuildContext context) {
@@ -114,21 +114,21 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildSuggestions() {
-    return Expanded(
-      child: ListView.builder(
-        padding: const EdgeInsets.all(16.0),
-        itemBuilder: /*1*/ (context, i) {
-          if (i.isOdd) return Divider(); /*2*/
+  // Widget _buildSuggestions() {
+  //   return Expanded(
+  //     child: ListView.builder(
+  //       padding: const EdgeInsets.all(16.0),
+  //       itemBuilder: /*1*/ (context, i) {
+  //         if (i.isOdd) return Divider(); /*2*/
 
-          final index = i ~/ 2; /*3*/
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-          }
-          return _buildRow(_suggestions[index]);
-        })
-    );
-  }
+  //         final index = i ~/ 2; /*3*/
+  //         if (index >= _suggestions.length) {
+  //           _suggestions.addAll(generateWordPairs().take(10)); /*4*/
+  //         }
+  //         return _buildRow(_suggestions[index]);
+  //       })
+  //   );
+  // }
 
   Widget _buildListContent(){
     return Expanded(
@@ -270,7 +270,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               topLeft: const Radius.circular(8.0),
                               topRight: const Radius.circular(8.0)),
                       child: Image.asset(            
-                        'images/onne-piece.png',            
+                        'images/one-piece.png',            
                         width: 600,            
                         height: 240,            
                         fit: BoxFit.fill,                 
@@ -446,120 +446,120 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       )
-    )
-  }
-
-  Widget _buildListView(){
-    return Expanded(
-      child: ListView(
-        padding: const EdgeInsets.all(8.0),
-        children: <Widget>[
-          Container(
-            height: 50,
-            color: Colors.amber[600],
-            child: const Center(child: Text('Entry A')),
-          ),
-          Container(
-            height: 50,
-            color: Colors.amber[500],
-            child: const Center(child: Text('Entry B')),
-          ),
-          Container(
-            height: 50,
-            color: Colors.amber[100],
-            child: const Center(child: Text('Entry C')),
-          ),
-        ],
-      )
     );
   }
 
-  Widget _buildRow(WordPair pair) {
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-    );
-  }
+  // Widget _buildListView(){
+  //   return Expanded(
+  //     child: ListView(
+  //       padding: const EdgeInsets.all(8.0),
+  //       children: <Widget>[
+  //         Container(
+  //           height: 50,
+  //           color: Colors.amber[600],
+  //           child: const Center(child: Text('Entry A')),
+  //         ),
+  //         Container(
+  //           height: 50,
+  //           color: Colors.amber[500],
+  //           child: const Center(child: Text('Entry B')),
+  //         ),
+  //         Container(
+  //           height: 50,
+  //           color: Colors.amber[100],
+  //           child: const Center(child: Text('Entry C')),
+  //         ),
+  //       ],
+  //     )
+  //   );
+  // }
 
-  Widget _buildContent(){
-    return Expanded(
-      child: Container(
-        padding: EdgeInsets.all(8.0),    
-        decoration: BoxDecoration(color: Colors.tealAccent),    
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[   
-            Expanded(
-              child: Column(
-                children: <Widget>[
-                  ClipRRect(
-                    borderRadius: new BorderRadius.only(
-                            topLeft: const Radius.circular(8.0),
-                            topRight: const Radius.circular(8.0)),
-                    child: Image.asset(            
-                      'images/lake.jpg',            
-                      width: 600,            
-                      height: 240,            
-                      fit: BoxFit.cover,                 
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(15.0),
-                    width: 600,
-                    decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: new BorderRadius.only(
-                            bottomLeft: const Radius.circular(8.0),
-                            bottomRight: const Radius.circular(8.0))),
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween, 
-                          children: <Widget>[
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              textDirection: TextDirection.ltr,
-                              children: <Widget>[
-                                Text(
-                                  "Lake",
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black)
-                                ),
-                                Text (
-                                  "20 September 2019",
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.grey)
-                                )
-                              ]
-                            ), 
-                            Text(
-                              "10:12",
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black)
-                            )
-                          ]
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 8.0, bottom: 8.0)
-                        ),
-                        Text('Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-                              'Alps. Situated 1,578 meters above sea level, it is one of the '
-                              'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-                              'half-hour walk through pastures and pine forest, leads you to the '
-                              'lake, which warms to 20 degrees Celsius in the summer. Activities '
-                              'enjoyed here include rowing, and riding the summer toboggan run.',
-                            textAlign: TextAlign.justify,
-                            softWrap: true)
-                      ]
-                    ),
-                  )
-                ],
-              ),
-            )            
-          ]
-        ),
-      )
+  // Widget _buildRow(WordPair pair) {
+  //   return ListTile(
+  //     title: Text(
+  //       pair.asPascalCase,
+  //       style: _biggerFont,
+  //     ),
+  //   );
+  // }
+
+  // Widget _buildContent(){
+  //   return Expanded(
+  //     child: Container(
+  //       padding: EdgeInsets.all(8.0),    
+  //       decoration: BoxDecoration(color: Colors.tealAccent),    
+  //       child: Column(
+  //         mainAxisAlignment: MainAxisAlignment.start,
+  //         mainAxisSize: MainAxisSize.min,
+  //         children: <Widget>[   
+  //           Expanded(
+  //             child: Column(
+  //               children: <Widget>[
+  //                 ClipRRect(
+  //                   borderRadius: new BorderRadius.only(
+  //                           topLeft: const Radius.circular(8.0),
+  //                           topRight: const Radius.circular(8.0)),
+  //                   child: Image.asset(            
+  //                     'images/lake.jpg',            
+  //                     width: 600,            
+  //                     height: 240,            
+  //                     fit: BoxFit.cover,                 
+  //                   ),
+  //                 ),
+  //                 Container(
+  //                   padding: EdgeInsets.all(15.0),
+  //                   width: 600,
+  //                   decoration: BoxDecoration(
+  //                           color: Colors.white,
+  //                           borderRadius: new BorderRadius.only(
+  //                           bottomLeft: const Radius.circular(8.0),
+  //                           bottomRight: const Radius.circular(8.0))),
+  //                   child: Column(
+  //                     children: <Widget>[
+  //                       Row(
+  //                         mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+  //                         children: <Widget>[
+  //                           Column(
+  //                             crossAxisAlignment: CrossAxisAlignment.start,
+  //                             textDirection: TextDirection.ltr,
+  //                             children: <Widget>[
+  //                               Text(
+  //                                 "Lake",
+  //                                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black)
+  //                               ),
+  //                               Text (
+  //                                 "20 September 2019",
+  //                                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.grey)
+  //                               )
+  //                             ]
+  //                           ), 
+  //                           Text(
+  //                             "10:12",
+  //                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black)
+  //                           )
+  //                         ]
+  //                       ),
+  //                       Padding(
+  //                         padding: EdgeInsets.only(top: 8.0, bottom: 8.0)
+  //                       ),
+  //                       Text('Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
+  //                             'Alps. Situated 1,578 meters above sea level, it is one of the '
+  //                             'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+  //                             'half-hour walk through pastures and pine forest, leads you to the '
+  //                             'lake, which warms to 20 degrees Celsius in the summer. Activities '
+  //                             'enjoyed here include rowing, and riding the summer toboggan run.',
+  //                           textAlign: TextAlign.justify,
+  //                           softWrap: true)
+  //                     ]
+  //                   ),
+  //                 )
+  //               ],
+  //             ),
+  //           )            
+  //         ]
+  //       ),
+  //     )
       
-    );
-  }
+  //   );
+  // }
 }
